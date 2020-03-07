@@ -1,0 +1,19 @@
+{% extends 'jinja2_base.html' %}
+
+{% block title %} 主页 {% endblock %}
+
+{% block body %}
+    {% include "left.html" %}
+    {#    声明jinja2的宏#}
+    {% macro fun(id) %}
+        <h1> hello {{ id }}</h1>
+    {% endmacro %}
+
+    {{ text | safe }}
+    {{ text | striptags }}
+
+    {{ fun(1) }}
+    {{ fun(2) }}
+    {{ fun(3) }}
+
+{% endblock %}
